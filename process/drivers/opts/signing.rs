@@ -4,13 +4,11 @@ use std::{
     path::{Path, PathBuf},
 };
 
-use blue_build_utils::get_env_var;
+use blue_build_utils::{get_env_var, platform::Platform};
 use bon::Builder;
 use miette::{IntoDiagnostic, Result};
 use oci_distribution::Reference;
 use zeroize::{Zeroize, Zeroizing};
-
-use crate::drivers::types::Platform;
 
 pub enum PrivateKey {
     Env(String),

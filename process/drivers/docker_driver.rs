@@ -8,6 +8,7 @@ use blue_build_utils::{
     constants::{BLUE_BUILD, DOCKER_HOST, GITHUB_ACTIONS},
     credentials::Credentials,
     get_env_var,
+    platform::Platform,
     semver::Version,
     string_vec,
 };
@@ -29,7 +30,7 @@ use crate::{
             RunOptsVolume, TagOpts,
         },
         traits::{BuildDriver, DriverVersion, InspectDriver, RunDriver},
-        types::{ContainerId, ImageMetadata, ImageRef, Platform},
+        types::{ContainerId, ImageMetadata, ImageRef},
     },
     logging::CommandLogging,
     signal_handler::{ContainerRuntime, ContainerSignalId, add_cid, remove_cid},

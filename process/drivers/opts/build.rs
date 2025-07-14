@@ -1,9 +1,10 @@
 use std::{borrow::Cow, path::Path};
 
+use blue_build_utils::platform::Platform;
 use bon::Builder;
 use oci_distribution::Reference;
 
-use crate::drivers::types::{ImageRef, Platform};
+use crate::drivers::types::ImageRef;
 
 use super::CompressionType;
 

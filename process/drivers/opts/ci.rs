@@ -1,9 +1,8 @@
 use std::borrow::Cow;
 
+use blue_build_utils::platform::Platform;
 use bon::Builder;
 use oci_distribution::Reference;
-
-use crate::drivers::types::Platform;
 
 #[derive(Debug, Clone, Builder)]
 pub struct GenerateTagsOpts<'scope> {

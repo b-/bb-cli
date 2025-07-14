@@ -7,7 +7,6 @@ use blue_build_process_management::{
             BuildTagPushOpts, CheckKeyPairOpts, CompressionType, GenerateImageNameOpts,
             GenerateTagsOpts, SignVerifyOpts,
         },
-        types::Platform,
     },
     logging::{color_str, gen_random_ansi_color},
 };
@@ -19,6 +18,7 @@ use blue_build_utils::{
     },
     cowstr,
     credentials::{Credentials, CredentialsArgs},
+    platform::Platform,
     string,
     traits::CowCollecter,
 };
@@ -57,9 +57,8 @@ pub struct BuildCommand {
     /// than your hardware will require installing
     /// qemu. Build times will be much greater when
     /// building for a non-native architecture.
-    #[arg(long, default_value = "native")]
-    #[builder(default)]
-    platform: Platform,
+    #[arg(long)]
+    platform: Option<Platform>,
 
     /// The compression format the images
     /// will be pushed in.

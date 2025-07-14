@@ -6,8 +6,8 @@ use std::{
 };
 
 use blue_build_utils::{
-    constants::SUDO_ASKPASS, credentials::Credentials, has_env_var, running_as_root,
-    semver::Version,
+    constants::SUDO_ASKPASS, credentials::Credentials, has_env_var, platform::Platform,
+    running_as_root, semver::Version,
 };
 use cached::proc_macro::cached;
 use colored::Colorize;
@@ -28,7 +28,7 @@ use crate::{
     drivers::{
         BuildDriver, DriverVersion, InspectDriver, RunDriver,
         opts::{BuildOpts, GetMetadataOpts, PushOpts, RunOpts, RunOptsEnv, RunOptsVolume, TagOpts},
-        types::{ImageMetadata, Platform},
+        types::ImageMetadata,
     },
     logging::{CommandLogging, Logger},
     signal_handler::{ContainerRuntime, ContainerSignalId, add_cid, remove_cid},

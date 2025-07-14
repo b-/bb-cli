@@ -14,7 +14,7 @@ use std::{
     time::Duration,
 };
 
-use blue_build_utils::semver::Version;
+use blue_build_utils::{platform::Platform, semver::Version};
 use bon::{Builder, bon};
 use cached::proc_macro::cached;
 use clap::Args;
@@ -29,7 +29,7 @@ use opts::{
     RemoveImageOpts, RunOpts, SignOpts, TagOpts, VerifyOpts,
 };
 use types::{
-    BuildDriverType, CiDriverType, DetermineDriver, ImageMetadata, InspectDriverType, Platform,
+    BuildDriverType, CiDriverType, DetermineDriver, ImageMetadata, InspectDriverType,
     RunDriverType, SigningDriverType,
 };
 use uuid::Uuid;

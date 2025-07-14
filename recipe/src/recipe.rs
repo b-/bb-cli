@@ -1,5 +1,6 @@
 use std::{borrow::Cow, fs, path::Path};
 
+use blue_build_utils::platform::Platform;
 use bon::Builder;
 use log::{debug, trace};
 use miette::{Context, IntoDiagnostic, Result};
@@ -56,6 +57,9 @@ pub struct Recipe<'a> {
     /// The version of nushell to use for modules.
     #[serde(skip_serializing_if = "Option::is_none", rename = "nushell-version")]
     pub nushell_version: Option<MaybeVersion>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty", default)]
+    pub platforms: Vec<Platform>,
 
     /// The stages extension of the recipe.
     ///

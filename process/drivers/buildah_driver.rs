@@ -1,13 +1,13 @@
 use std::{io::Write, process::Stdio};
 
-use blue_build_utils::{credentials::Credentials, semver::Version};
+use blue_build_utils::{credentials::Credentials, platform::Platform, semver::Version};
 use colored::Colorize;
 use comlexr::cmd;
 use log::{debug, error, info, trace};
 use miette::{IntoDiagnostic, Result, bail, miette};
 use serde::Deserialize;
 
-use crate::{drivers::types::Platform, logging::CommandLogging};
+use crate::logging::CommandLogging;
 
 use super::{
     BuildDriver, DriverVersion,
